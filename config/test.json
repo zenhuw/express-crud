@@ -1,0 +1,9 @@
+{
+    "env": "test",
+    "mongodbUrl": "mongodb://localhost:54264/express-crud",
+    "secretKey": "secretKey",
+    "cors": {
+        "origin": true,
+        "credentials": true
+    }
+}

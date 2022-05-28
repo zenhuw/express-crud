@@ -1,0 +1,21 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: express-crud-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: express-crud
+    spec:
+      containers:
+        - name: express-crud
+          image: zenhuw/express-crud:v1
+          ports:
+            - containerPort: 3000
+              name: nodejs-port
+  selector:
+    matchLabels:
+      app: express-crud
