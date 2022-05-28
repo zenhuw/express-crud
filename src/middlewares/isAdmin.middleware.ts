@@ -6,5 +6,8 @@ export const isAdmin = (req: RequestModified, res: Response, next: NextFunction)
   if (isNil(req.user)) {
     return res.status(401).send('Not Authorized');
   }
+  if (!req.user.isAdmin) {
+    return res.status(401).send('Route only for admin');
+  }
   next();
 };
